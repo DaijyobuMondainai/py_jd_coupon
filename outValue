@@ -1,0 +1,26 @@
+#coding:utf-8
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import datetime
+import time
+
+option = webdriver.ChromeOptions()
+option.add_argument(r'--user-data-dir=') 
+browser = webdriver.Chrome(options=option)
+#browser = webdriver.Chrome()
+browser.get('https:')
+
+browser.implicitly_wait(0.5)
+a = browser.find_elements_by_class_name('plan-auto-link')
+if len(a) > 0:
+    #try:
+    a[0].click()
+    time.sleep(1)
+    s = browser.find_elements_by_class_name('blance-blue')
+    if len(s) > 0:
+        s[0].click()
+        time.sleep(1)
+        d = browser.find_elements_by_class_name('ui-button-ok')
+        if len(d) > 0:
+            d[0].click()
