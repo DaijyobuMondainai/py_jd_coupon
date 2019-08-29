@@ -24,3 +24,8 @@ if len(a) > 0:
         d = browser.find_elements_by_class_name('ui-button-ok')
         if len(d) > 0:
             d[0].click()
+
+
+with open('filename') as file:
+    for line in file:
+        do_things(line)
