@@ -29,3 +29,16 @@ if len(a) > 0:
 with open('filename') as file:
     for line in file:
         do_things(line)
+
+
+
+import datetime
+import time
+
+def in_time_range(start, end):
+    now = time.strptime(time.strftime("%H%M%S"), "%H%M%S")
+    if time.strptime(start, "%H%M%S") <= now <= time.strptime(end, "%H%M%S"):
+        return True
+    return False
+
+print(in_time_range("105100","110000"))
